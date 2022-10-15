@@ -15,7 +15,7 @@ public class Cabin implements Serializable {
    private Integer id;
    private String name;
    private String brand;
-   private Integer room;   
+   private Integer rooms;   
    private String description;
    
    @ManyToOne
@@ -55,12 +55,12 @@ public class Cabin implements Serializable {
         this.brand = brand;
     }
 
-    public Integer getRoom() {
-        return room;
+    public Integer getRooms() {
+        return rooms;
     }
 
-    public void setRoom(Integer room) {
-        this.room = room;
+    public void setRooms(Integer rooms) {
+        this.rooms = rooms;
     }
 
     public String getDescription() {
@@ -93,6 +93,6 @@ public class Cabin implements Serializable {
 
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
-    }  
-
+    }
+    
 }

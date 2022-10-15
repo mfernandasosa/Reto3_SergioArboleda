@@ -24,6 +24,7 @@ public class CategoryController {
     }
     
     @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
     public Category save(@RequestBody Category category){
         return categoryService.save(category);
     }

@@ -29,11 +29,13 @@ public class CabinController {
     }
     
     @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
     public Cabin update(@RequestBody Cabin cabin) {
         return cabinService.update(cabin);
     }
     
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
     public boolean delete(@PathVariable("id") int id){
         return cabinService.deleteCabin(id);
     }

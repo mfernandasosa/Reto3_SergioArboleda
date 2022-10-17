@@ -43,6 +43,9 @@ public class CabinService {
                if(cabin.getDescription()!=null){
                    cabinEncontrado.get().setDescription(cabin.getDescription());
                }
+               if(cabin.getRooms()!=null){
+                   cabinEncontrado.get().setRooms(cabin.getRooms());
+               }
                if(cabin.getCategory()!=null){
                    cabinEncontrado.get().setCategory(cabin.getCategory());
                }
@@ -52,7 +55,7 @@ public class CabinService {
         return cabin;
     }
     public boolean deleteCabin(int id){
-        Boolean resultado = getCabin(id).map((var cabinPorEliminar) ->{
+        Boolean resultado = getCabin(id).map(cabinPorEliminar ->{
             cabinRepository.delete(cabinPorEliminar);
             return true;
     }).orElse(false);

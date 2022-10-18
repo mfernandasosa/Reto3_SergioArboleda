@@ -54,8 +54,8 @@ public class CabinService {
         }
         return cabin;
     }
-    public boolean deleteCabin(int id){
-        Boolean resultado = getCabin(id).map(cabinPorEliminar ->{
+    public boolean deleteCabin(int cabinId){
+        Boolean resultado = getCabin(cabinId).map(cabinPorEliminar ->{
             cabinRepository.delete(cabinPorEliminar);
             return true;
     }).orElse(false);
